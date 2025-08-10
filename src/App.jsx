@@ -12,6 +12,8 @@ import WhatWeOffer from "./components/WhatWeOffer";
 import HowItWorks from "./components/HowItWorks";
 import Footer from "./components/Footer";
 import ConnectWithUs from "./components/connectwithus";
+import FAQ from "./components/FAQ";
+import FloatingChat from "./components/FloatingChat"; // ✅ Added
 
 export default function App() {
   return (
@@ -31,16 +33,19 @@ export default function App() {
       </div>
 
       {/* New sections */}
-      <InTheNews />
-      <DreamHomeCTA />
       <PriceEstimator />
       <WhatWeOffer />
       <HowItWorks />
-      <ConnectWithUs/>
+      <InTheNews />
+      <FAQ />
+      <DreamHomeCTA />
+      <ConnectWithUs />
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating WhatsApp + Chat Popup */}
+      <FloatingChat />
     </div>
   );
 }
-

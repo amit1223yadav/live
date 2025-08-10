@@ -3,7 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 const ConnectWithUs = () => {
   return (
-    <section className="bg-gray-50 py-12 px-4 text-center">
+    <section className="bg-gray-50 py-12 px-4 text-center  bg-gradient-to-r from-purple-700 to-yellow-500 text-center text-white py-12 px-4">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
         Connect with us
       </h2>
