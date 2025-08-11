@@ -3,16 +3,22 @@ import React from "react";
 export default function Hero() {
   return (
     <section
-      className="relative pt-[88px] h-[90vh] flex items-center"
+      className="relative min-h-[90vh] flex items-center"
       style={{
-        backgroundImage: "url('https://images.livspace-cdn.com/blur:8/plain/https://d3gq2merok8n5r.cloudfront.net/img/landingpages/full-home-interiors/Edge_New/new-folder-1657193933-8Jkh5/1440x730-1657194139-erPsT.jpg')",
+        backgroundImage:
+          "url('https://images.livspace-cdn.com/blur:8/plain/https://d3gq2merok8n5r.cloudfront.net/img/landingpages/full-home-interiors/Edge_New/new-folder-1657193933-8Jkh5/1440x730-1657194139-erPsT.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
+      {/* Spacer to push content below fixed navbar */}
+      <div className="absolute top-0 left-0 w-full h-[88px] md:h-[96px] bg-transparent"></div>
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 pt-[88px] md:pt-[96px] grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left: Text */}
         <div className="text-white space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">
@@ -27,7 +33,7 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Right: Shifted Form Card */}
+        {/* Right: Form Card */}
         <div className="flex justify-end">
           <div className="bg-white shadow-xl rounded-xl p-6 w-full max-w-sm translate-x-4">
             <h2 className="text-xl font-semibold mb-4 text-gray-800">
@@ -66,3 +72,4 @@ export default function Hero() {
     </section>
   );
 }
+

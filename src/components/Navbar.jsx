@@ -13,7 +13,6 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full bg-white border-b z-50 shadow-sm">
-        {/* Top Nav */}
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Left - Logo & Main Links */}
           <div className="flex items-center space-x-6">
@@ -45,10 +44,12 @@ export default function Navbar() {
               className="h-8"
             />
 
-            {/* Main Navigation (Desktop) */}
+            {/* Desktop Menu */}
             <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-800 relative">
               <div className="relative">
-                <button onClick={() => toggleMenu("design")}>Design Ideas ▼</button>
+                <button onClick={() => toggleMenu("design")}>
+                  Design Ideas ▼
+                </button>
                 {openMenu === "design" && (
                   <div className="absolute top-full left-0 bg-white shadow-lg border mt-1 rounded w-48">
                     <a className="block px-4 py-2 hover:bg-gray-100" href="#">
@@ -63,7 +64,6 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-
               <a href="#">Magazine</a>
               <a href="#">Cities</a>
               <a href="#">Portfolio</a>
@@ -72,8 +72,8 @@ export default function Navbar() {
             </nav>
           </div>
 
-          {/* Right - Login, Profile & Button */}
-          <div className="flex items-center space-x-4">
+          {/* Desktop Right Side */}
+          <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={() => setShowLogin(true)}
               className="text-sm text-gray-700 hover:text-black"
@@ -104,6 +104,41 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileOpen && (
+          <div className="md:hidden bg-white shadow-lg border-t">
+            <a className="block px-4 py-2 hover:bg-gray-100" href="#">
+              Design Ideas
+            </a>
+            <a className="block px-4 py-2 hover:bg-gray-100" href="#">
+              Magazine
+            </a>
+            <a className="block px-4 py-2 hover:bg-gray-100" href="#">
+              Cities
+            </a>
+            <a className="block px-4 py-2 hover:bg-gray-100" href="#">
+              Portfolio
+            </a>
+            <a className="block px-4 py-2 hover:bg-gray-100" href="#">
+              Store Locator
+            </a>
+            <a className="block px-4 py-2 hover:bg-gray-100" href="#">
+              More
+            </a>
+
+            {/* Login for Mobile */}
+            <button
+              onClick={() => {
+                setShowLogin(true);
+                setMobileOpen(false);
+              }}
+              className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-700"
+            >
+              Login
+            </button>
+          </div>
+        )}
       </header>
 
       {/* Login Modal */}
